@@ -2,19 +2,16 @@ import React, { useReducer } from 'react';
 import ReducerAction from './ReducerAction';
 
 const UseReducer = () => {
-    const[state,dispatch]=useReducer(ReducerAction,0)
+    const[state,dispatch] = useReducer(ReducerAction,0)
     return (
-        <div>
-            <h1>Use Reducer Hook</h1>
+        <div className='container'>
+            <h1>Counter</h1>
             <>
             {state}
             </>
-           <br />
-            <br />
-            <button onClick={()=>{dispatch({type:'ADD'})}}>Add </button>
-            <br />
-            <br />
-             <button  onClick={()=>{dispatch({type:'SUB'})}}>Sub</button>
+          <p>  <button  onClick={()=>{dispatch({type:'ADD',payload:10})}}>Add</button></p>
+          <p> <button  onClick={()=>{dispatch({type:'SUB',payload:5})}}>Sub</button></p>
+          <p> <button  onClick={()=>{dispatch({type:'RESET',payload:0})}}>Reset</button></p>
         </div>
     );
 };
